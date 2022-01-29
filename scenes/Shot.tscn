@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/ShotSP2.gd" type="Script" id=1]
+[ext_resource path="res://scripts/ShotSP1.gd" type="Script" id=2]
+[ext_resource path="res://scripts/Shot.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 3.0
+
+[node name="Shot" type="Area2D" groups=["enemy"]]
+position = Vector2( 50, 50 )
+collision_layer = 4
+script = ExtResource( 3 )
+
+[node name="ShotSP2" type="Node2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="ShotSP1" type="Node2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
